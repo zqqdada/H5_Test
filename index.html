@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1, maximum-scale=1,mininum-scale=1,user-scalable=no">
+    <title>h5小程序</title>
+</head>
+<link rel="stylesheet" href="./css/base.css">
+
+<link rel="stylesheet" href="./css/h5-loading.css">
+<link rel="stylesheet" href="./css/animate.css">
+<script>
+    //适配兼容
+    !(function (doc, win) {
+        console.log(doc, win)
+        // var docEle = doc.documentElement;
+        const dpr = Math.min(win.devicePixelRatio, 3),
+            scale = 1 / dpr,
+            resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+        var recalCulate = function () {
+            var docEle = document.documentElement,
+                w = docEle.clientWidth,
+                num = (w > 750 ? 750 : w) / 750; // **此时的750就是你设计稿的尺寸
+            docEle.style.fontSize = (num * 100).toFixed(1) + 'px';
+        };
+        recalCulate();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvent, recalCulate, false);
+    })(document, window);
+</script>
+
+<body>
+    <div class="h5-body">
+        <!-- 加载页 -->
+        <div class="loading page page1 ">
+            <div class="line-t"></div>
+            <img class="xl1" src="./img/index/xl1.png" alt="">
+            <img class="xl2" src="./img/index/xl2.png" alt="">
+            <img class="xl3" src="./img/index/xl3.png" alt="">
+            <div class="lqhl">
+                <img class="img1" src="./img/index/lqhl1.png" alt="" srcset="">
+                <img class="img2 hide" src="./img/index/lqhl2.png" alt="" srcset="">
+                <img class="img3 hide" src="./img/index/lqhl3.png" alt="" srcset="">
+            </div>
+            
+            <img class='person' src="./img/index/person.png" alt="" srcset="">
+            <button class="huadong animated up-down infinite"><img src="./img/index/huadong.png" alt="" srcset=""></button>
+            <div class="line-b"></div>
+        </div>
+        <!-- 选择页 -->
+        <div class="choose page page2 hide">
+            <img class="c-xl1 swing animated infinite" src="./img/choose/c-xl1.png" alt="" srcset="">
+            <img class="c-xl2 swing animated infinite" src="./img/choose/c-xl2.png" alt="" srcset="">
+            <img class="c-xl3 swing animated infinite" src="./img/choose/c-xl3.png" alt="" srcset="">
+            <img class="xx1 pulse animated infinite" src="./img/choose/xx1.png" alt="" srcset="">
+            <img class="xx2 pulse animated infinite" src="./img/choose/xx2.png" alt="" srcset="">
+            <img class="xx3 pulse animated infinite" src="./img/choose/xx3.png" alt="" srcset="">
+            <div class="chooses ">
+                <img class="choose1" src="./img/choose/choose1.png" alt="" srcset="">
+                <img class="choose2" src="./img/choose/choose2.png" alt="" srcset="">
+                <img class="choose3" src="./img/choose/choose3.png" alt="" srcset="">
+                <img class="choose4" src="./img/choose/choose4.png" alt="" srcset="">
+            </div>
+            <img class="ok" src="./img/choose/ok.png" alt="" srcset="">
+        </div>
+        <!-- 答题页 -->
+        <div class="dt dt0 hide">
+            <!-- 类型1三页 -->
+            <div class="dt-p1  ">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt1/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt1/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="dog dt1 " src="./img/dt1/dog.png" alt="" srcset="">
+            </div>
+            <div class="dt-p2 hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt1/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt1/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="dog dt2 " src="./img/dt1/dog.png" alt="" srcset="">
+            </div>
+            <div class="dt-p3 hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt1/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt1/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt1/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="submit" src="./img/dt1/submit.png" alt="" srcset="">
+            </div>
+        </div>
+        <div class="dt dt1 hide">
+            <!-- 类型2 三页 -->
+            <div class="dt-p1  ">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt2/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt2/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <!-- <img class="dog dt1" src="./img/dt1/dog.png" alt="" srcset=""> -->
+            </div>
+            <div class="dt-p2  hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt2/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt2/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <!-- <img class="dog dt2" src="./img/dt1/dog.png" alt="" srcset=""> -->
+            </div>
+            <div class="dt-p3 hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt2/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt2/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt2/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="submit " src="./img/dt2/submit.png" alt="" srcset="">
+            </div>
+        </div>
+        <div class="dt dt2 hide">
+            <!-- 类型3 三页 -->
+            <div class="dt-p1  ">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt3/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt3/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="family dt1" src="./img/dt3/family.png" alt="" srcset="">
+            </div>
+            <div class="dt-p2 hide ">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt3/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt3/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="family dt2" src="./img/dt3/family.png" alt="" srcset="">
+            </div>
+            <div class="dt-p3 hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt3/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt3/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt3/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="submit" src="./img/dt3/submit.png" alt="" srcset="">
+            </div>
+        </div>
+        <div class="dt dt3 hide">
+            <!-- 类型4 三页 -->
+            <div class="dt-p1  ">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt4/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt4/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="mj dt1" src="./img/dt4/mj.png" alt="" srcset="">
+            </div>
+            <div class="dt-p2  hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt4/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt4/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="mj dt2" src="./img/dt4/mj.png" alt="" srcset="">
+            </div>
+            <div class="dt-p3  hide">
+                <img class="star" src="./img/dt1/star.png" alt="" srcset="">
+                <div class="fgx">
+                    <img class="fgx-img1" src="./img/dt4/fgx1.png" alt="" srcset="">
+                    <img class="hide" src="./img/dt4/fgx2.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx3.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx4.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx5.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx6.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx7.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx8.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx9.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx10.png" alt="" srcset="">
+                    <img  class="hide" src="./img/dt4/fgx11.png" alt="" srcset="">
+                </div>
+                <div class="selects">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    
+                </div>
+                <img class=" gou hide" src="./img/dt1/gou.png" alt="" srcset="">
+                <img class="submit" src="./img/dt4/submit.png" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script type="text/javascript">
+    //上滑
+    document.addEventListener("touchmove", function (e) {
+        var e = e || event
+        e.preventDefault();
+    }, false);
+    var curPage = 1;
+    var PageL = $('.h5-body .page').length;
+    var canTouch = false;
+    canTouch = true;
+    var startY, endY, diff;
+    document.body.addEventListener("touchstart", touchStart, false);
+    document.body.addEventListener("touchmove", touchMove, false);
+    document.body.addEventListener("touchend", touchEnd, false);
+    function touchStart(e) {
+        var touch = e.touches[0];
+        startY = touch.pageY;
+    }
+    function touchMove(e) {
+        //e.preventDefault();
+        var touch = e.touches[0];
+        endY = touch.pageY;
+        diff = endY - startY;
+    }
+    function touchEnd(e) {
+        if (Math.abs(diff) > 150 && canTouch) {
+            if (diff > 0) {
+                //向下翻
+                return;
+                // if(curPage <= 1){
+                // 	return;
+                // }
+                // $('.page' + curPage).removeClass('inTop outTop inDown outDown hide').addClass('outDown');
+                // curPage--;
+                // $('.page' + curPage).removeClass('inTop outTop inDown outDown hide').addClass('inDown');
+
+            } else {
+                //向上翻
+                if (curPage >= PageL) {
+                    return;
+                }
+                $('.page' + curPage).removeClass('inTop outTop hide').addClass('outTop hide');
+                curPage++;
+                $('.page' + curPage).removeClass('inTop outTop hide').addClass('inTop');
+
+
+            }
+            canTouch = false;
+            setTimeout(function () {
+                canTouch = true;
+                diff = 0;
+                clearInterval(timer)
+                //$('.page' + (curPage - 1) + ', .page' + (curPage + 1)).addClass('hide');
+            }, 1000);
+        }
+    }
+
+    //切换图片
+    let loadingIndex = 1
+    let timer = setInterval(function(){
+        $('.lqhl').find('img').addClass('hide').removeClass('show')
+        $('.lqhl').find(`.img${loadingIndex}`).addClass('show').removeClass('hide')
+        loadingIndex++;
+        if(loadingIndex > 3){
+            loadingIndex = 2
+        }
+    },500)
+
+    // -----------选择页--------------
+    let preIndex = -1
+    //类型默认为0,1,2,3
+    let TYPE_INDEX = -1 
+    let preSrc = ''
+    $('.chooses').on('click','img',function(){
+        if(preIndex > -1 && preSrc){
+            //上一次点击还原样式
+            $('.chooses>img').eq(preIndex).attr('src',preSrc)
+        }
+        let curIndex =  $(this).index()
+        let curSrc = $(this).attr('src')
+        let s1 = curSrc.slice(0,-4) || ''
+        let index = curIndex + 1
+        let s2 = `-${index}.png `
+        let _s =s1+ s2
+        $(this).attr('src',_s)
+        preIndex = curIndex
+        preSrc = curSrc
+
+    })
+
+    $('.ok').click(function(){
+        $('.choose').addClass('hide')
+        let index = preIndex
+        $('body').find('.dt').addClass('hide').eq(index).addClass('show').removeClass('hide')
+        TYPE_INDEX = preIndex
+        if(index == 0){
+            // $('.dog').addClass('show')
+        }else if(index == 1){
+            // $('.family').addClass('show')
+        }else if(index == 2){
+            // ('.family').addClass('show')
+        }else if(index == 3){
+            // $('.dog').addClass('hide')
+        }
+
+        changePage()
+    })
+
+    //切换分割线图片
+    
+    // 默认第一页
+    let DT_pageIndex = 1
+    let fgxIndex = 0
+    function fgxInter(){
+        $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex} .fgx`).find('img').addClass('hide').removeClass('show')
+        $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex} .fgx`).find('img').eq(fgxIndex).addClass('show').removeClass('hide')
+        fgxIndex++;
+        if(fgxIndex > 10){
+            fgxIndex = 0
+        }
+    }
+    let fgxTimer = setInterval(fgxInter,500)
+
+    //答题选择
+    let gouTopObj={
+        top1:[6.36,6.36,6.36,6.36],
+        top2:[6.06,6.36,6.36,6.36],
+        top3:[6.36,6.36,6.36,6.36]
+    }
+    //选择题目延迟1s切题
+    
+    function changePage(){
+        $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex} .selects`).on('click','div',function(){
+        // console.log('DT_pageIndex',DT_pageIndex)
+        let i = $(this).index()
+        let t = `top${DT_pageIndex}`
+        $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex} .gou`).removeClass('hide').addClass('show').css({
+            top:(gouTopObj[t][TYPE_INDEX]+ i )+ 'rem'
+        })
+        clearInterval(fgxTimer)
+        fgxIndex = 0
+        setInterval(fgxInter,500);
+        setTimeout(function(){
+            
+            DT_pageIndex++;
+            if(DT_pageIndex > 3) {
+                DT_pageIndex = 3;
+                 return;
+            }
+            $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex-1}`).removeClass('show').addClass('hide');
+            $(`.dt${TYPE_INDEX} .dt-p${DT_pageIndex}`).removeClass('hide').addClass('show');
+            if(DT_pageIndex == 3){
+                $('.dog').addClass('hide');
+            }
+            changePage()
+        },1000)
+        
+        
+    })
+    }
+    
+</script>
+<script>
+   
+</script>
+</html>
